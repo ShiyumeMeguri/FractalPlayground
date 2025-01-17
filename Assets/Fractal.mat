@@ -27,8 +27,8 @@ Material:
     - _A: 0.5
     - _CX: 26544
     - _CY: 0
-    - _CenterX: -0.67
-    - _CenterY: 0.36
+    - _CenterX: 0
+    - _CenterY: 0
     - _FlowLight: -1.38
     - _Iterations: 500
     - _Leaf: 0.1
