@@ -27,20 +27,11 @@ Shader "Custom/ModularFractalShader"
             Blend Off
 
             CGPROGRAM
-            #pragma vertex vert
+            #pragma vertex vert_img
             #pragma fragment frag
             #pragma target 4.0
 
             #include "UnityCG.cginc"
-
-            //////////////////////////////////////////////////////////////////////////
-
-            // Vertex Shader
-            struct appdata
-            {
-                float4 vertex : POSITION;
-                float2 uv : TEXCOORD0;
-            };
 
             struct v2f
             {
@@ -50,16 +41,6 @@ Shader "Custom/ModularFractalShader"
 
             sampler2D _MainTex;
             float4 _MainTex_ST;
-
-            v2f vert(appdata v)
-            {
-                v2f o;
-                o.vertex = UnityObjectToClipPos(v.vertex);
-                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
-                return o;
-            }
-
-            //////////////////////////////////////////////////////////////////////////
 
             float4 _Color;
             float _CenterX;
