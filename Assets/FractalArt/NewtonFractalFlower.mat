@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CustomMaterial
+  m_Name: NewtonFractalFlower
   m_Shader: {fileID: 4800000, guid: 9334be865a9bc264593b8f157ecf494d, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
