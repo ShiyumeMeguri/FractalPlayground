@@ -3,7 +3,8 @@ Shader "Custom/CustomShader"
     Properties
     {
         _Center ("Center", Vector) = (0.0, 0.0, 0.0, 0.0)
-        _Zoom ("Zoom", Float) = 1.0
+        [HDR] _BaseColor ("Center", Color) = (1.0, 1.0, 1.0, 1.0)
+        _Zoom ("Zoom", Float) = 100
     }
 
     SubShader
@@ -35,6 +36,7 @@ Shader "Custom/CustomShader"
             static const int _214_step = 10;
 
             float4 _Center;
+            float4 _BaseColor;
             float _Zoom;
 
             float2 coshComplex(float2 a)
@@ -87,14 +89,15 @@ Shader "Custom/CustomShader"
             float4 frag(v2f i) : SV_Target
             {
                 // 平移UV不缩放，防止分形变形
-                float2 uv = (i.uv - 0.5) / _Zoom + _Center.xy;
+                float2 uv = (i.uv - 0.5) / (_Zoom * 0.001) + _Center.xy;
 
                 float lengtha, step;
                 float2 value;
                 foldApproach(uv, lengtha, step, value );
                 float c = frac(step / 20.0f);
                 float4 color = float4(frac(c * c * 0.8f), frac(c * c * 0.8f), 0.0f, 1.0f);
-                color.rgb = color.zxy;
+                //color.z = color.x * color.y;
+                color.rgb = ( color.rgb * _BaseColor);
                 return color;
             }
 

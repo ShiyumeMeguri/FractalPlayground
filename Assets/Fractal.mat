@@ -8,8 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Fractal
-  m_Shader: {fileID: 4800000, guid: ba47029cfdff99f4a9b6fb2bf9aa8376, type: 3}
-  m_ShaderKeywords: _TOGGLEFEATURE_ON
+  m_Shader: {fileID: 4800000, guid: 5791cec9e31b1b34fa68bbd7e787535e, type: 3}
+  m_ShaderKeywords: _REVERSE_ON _TOGGLEFEATURE_ON _USEJULIA_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -25,17 +25,18 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _A: 0.5
-    - _CX: 11104.3
-    - _CY: 101492
+    - _CX: 858.4
+    - _CY: -75113.95
     - _CenterX: 0
     - _CenterY: 0
     - _FlowLight: -1.38
-    - _FractalType: 7
+    - _FractalType: 0
     - _Iterations: 500
     - _Leaf: 0.1
-    - _Reverse: 0
-    - _Scale: 205519
+    - _Reverse: 1
+    - _Scale: 200000000
     - _ToggleFeature: 1
-    - _UseJulia: 0
+    - _UseJulia: 1
+    - leafOrbitOffset: 3
     m_Colors:
     - _Color: {r: 10, g: 2.5, b: 0.75, a: 1}
